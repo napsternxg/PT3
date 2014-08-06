@@ -57,8 +57,9 @@
 				<div class="row">
 					<div class="col-12">
 					<span id="current-player"></span>
-					<button id="toss" class="btn btn-medium" onclick="javascript: toss(event);">Toss</button>
+					<button id="toss" class="btn btn-default" onclick="javascript: toss(event);">Toss</button>
 					<span id="tossVal" class="alert alert-info"></span>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:restart();">New Game</button>
 					</div>
 				</div>
 				<div class="row">
@@ -89,7 +90,7 @@
 				  </div>
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				  <!--<button type="button" class="btn btn-primary">New Game</button>-->
+					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:restart();">New Game</button>
 				  </div>
 				</div>
 			  </div>
@@ -107,7 +108,11 @@
 			<li>The player should click toss which will make a toss between 0 and 1 and will play either of the 2 spots the player has selected. </li>
 			<li>After the toss the second player should play their turn exactly the same was as the original player. </li>
 			<li>The game restarts whenever any of the end game condition is met, which is same as the original tic tac toe.</li>
-				</ol>
+			</ol>
+			<h3>Motivation</h3>
+			<p>The motivation of the game came when me and 2 of my research group friends (Sean Wilner and Amirhossein Aleyasin) were at a bar in St. Petersberg beach, Florida for the Sunbelt 2014 conference.
+				To pass time we tried playing a tic tac toe game which because of its predictable nature bored us in few minutes. Then I thought of adding this randomness using a coin toss. We had some good close games.
+				After this experience I introduced this game to few other of my friends and they enjoyed it as well. It was then that I decided to make this into a web game. I hope you all like it as well.</p>
 			</div>
 		</div>
       </div>
@@ -137,5 +142,5 @@
   ga('send', 'pageview');
   
 
-</script>
+  </script>
 </html>

@@ -140,6 +140,14 @@ function clickHandler(e) {
 
 	var y = Math.floor(mouseY / (height / 3));
 	var x = Math.floor(mouseX / (width / 3));
+<<<<<<< HEAD
+=======
+	var bit = (1 << x+(y*3)); 
+	if(!isEmpty(xBoard, oBoard, bit)){
+		alert("Please select a non empty cell.");
+		return false;
+	}
+>>>>>>> gh-pages
 	console.log("ClientX: %s, Width/3: %s, X: %s, MouseX: %s", e.clientX, width / 3, x, mouseX);
 	console.log("ClientY: %s, Height/3: %s, Y: %s, MouseY: %s", e.clientY, height / 3, y, mouseY);
 	
@@ -316,11 +324,22 @@ function toss() {
 		alert("Please select atleast 2 positions and then click toss.");
 		return false;
 		}
+<<<<<<< HEAD
 	/**
 		Clear last position which were selected during decision making.
 	**/
 	clearPlayerPosition(playPositions[0][0], playPositions[0][1]);
 	clearPlayerPosition(playPositions[1][0], playPositions[1][1]);
+=======
+	
+	var tempBits = [(1 << playPositions[0][0] + (playPositions[0][1] * 3)), 
+			(1 << playPositions[1][0] + (playPositions[1][1] * 3))];
+	
+	if(!isEmpty(xBoard, oBoard, tempBits[0]) || !isEmpty(xBoard, oBoard, tempBits[1])){
+		alert("Please select empty cells and then click toss.");
+		return false;
+	}
+>>>>>>> gh-pages
 	
 	var tossVal = Math.random() < 0.5 ? 0 : 1;
 	$("#tossVal").text(tossVal);
@@ -333,6 +352,14 @@ function toss() {
 	if (isEmpty(xBoard, oBoard, bit)) {
 
 		//markBit(bit, 'X');
+<<<<<<< HEAD
+=======
+		/**
+		Clear last position which were selected during decision making.
+		**/
+		clearPlayerPosition(playPositions[0][0], playPositions[0][1]);
+		clearPlayerPosition(playPositions[1][0], playPositions[1][1]);
+>>>>>>> gh-pages
 		markBit(bit, playerIcons[currPlayer]);
 
 		if (!checkNobody()) {

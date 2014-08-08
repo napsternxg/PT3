@@ -28,6 +28,11 @@ function paintBoard() {
 	var minDim = board.offsetHeight < board.offsetWidth ? board.offsetHeight: board.offsetWidth ;
 	board.width  = minDim;
 	board.height = minDim;
+	/*
+		Keep size of canvas constant on screen size change. Useful for rotating screens in mobile devices.
+	*/
+	board.style.width=minDim+'px';
+	board.style.height=minDim+'px';
 	
 	context = board.getContext('2d');
 	//context.style.width = '100%';

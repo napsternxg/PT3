@@ -313,10 +313,18 @@ function nextPlayer(){
 
 var playerIcons = ['O', 'X'];
 function toss() {
-	if (selectedPositions < 2){
+	if (selectedPositions < 2 && totalMoves < 8){
 		alert("Please select at least 2 positions and then click toss.");
 		return false;
-		}
+	}else if(selectedPositions == 1 && totalMoves == 8){
+			/**
+				Allow game play for last move even if just 1 position is selected.
+			*/
+			console.log("Play positions: "+playPositions);
+			playPositions[1] = playPositions[0];
+			console.log("On move "+totalMoves);
+			console.log("Play positions: "+playPositions);
+	}
 
 	var tempBits = [(1 << playPositions[0][0] + (playPositions[0][1] * 3)), 
 			(1 << playPositions[1][0] + (playPositions[1][1] * 3))];
